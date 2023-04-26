@@ -21,7 +21,7 @@
                             <th>Dosen</th>
                             <th>Jumlah Soal</th>
                             <th>Keterangan</th>
-                            <th>#</th>
+                            <th>Action</th>
                         </tr>
                      </thead>
                      <tbody>
@@ -32,7 +32,17 @@
                             <td>{{ $data-> dosen }}</td>
                             <td>{{ $data-> jumlah_soal }}</td>
                             <td>{{ $data-> keterangan  }}</td>
-                            <td></td>
+                            <td>
+                            <form action="{{ url('/test',$data->id) }}" method="post">
+                                @csrf
+                                @method('DELETE')
+                                <button class="btn btn-sm btn-danger" onclick="return confirm('Anda Yakin Ingin Menghapus?')">
+                                    <i class="fas fa-trash"></i> Delete </button>
+
+                                <a href="{{ url('/test/edit',$data->id) }}" class="btn btn-sm btn-warning"><i class="fas fa-edit"></i> Edit</a>  
+                                
+                            </form>
+                            </td>
                         </tr>
                         @endforeach
                      </tbody>

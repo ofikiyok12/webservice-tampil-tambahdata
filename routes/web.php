@@ -30,5 +30,13 @@ Route::get('/hai', function () {
 Route::get('/test', [tesController::class, 'index']);
 Route::get('/test/create', [tesController::class, 'create']);
 Route::post('/test/store', [tesController::class, 'store']);
+Route::delete('/test/{id}', [tesController::class, 'destroy']);
+
+Route::get('/test/edit/{data}', [tesController::class, 'edit']);
+Route::patch('/test/update/{data}', [tesController::class, 'update']);
+ 
+
+
+
 
 // Route::get('/test/create','tesController@create')->name('test.create');
