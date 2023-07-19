@@ -16,22 +16,24 @@
                 <table class="table table-border">
                      <thead>
                         <tr>
-                            <th>No</th>
-                            <th>Nama Matakuliah</th>
-                            <th>Dosen</th>
-                            <th>Jumlah Soal</th>
+                        <th>No</th>
+                            <th>Nama Pengeluaran</th>
                             <th>Keterangan</th>
+                            <th>Biaya</th>
+                            <th>Nama Konsumen</th>
+                            <th>Email Konsumen</th>
                             <th>Action</th>
                         </tr>
                      </thead>
                      <tbody>
-                        @foreach ($soal as $data)
+                        @foreach ($additionalcosts as $data)
                         <tr>
-                            <td>{{ $loop->iteration }}</td>
-                            <td>{{ $data-> nama_mk }}</td>
-                            <td>{{ $data-> dosen }}</td>
-                            <td>{{ $data-> jumlah_soal }}</td>
-                            <td>{{ $data-> keterangan  }}</td>
+                        <td>{{ $loop->iteration }}</td>
+                            <td>{{ $data-> nama_pengeluaran }}</td>
+                            <td>{{ $data-> keterangan }}</td>
+                            <td>{{ $data-> biaya }}</td>
+                            <td>{{ $data-> nama_konsumen  }}</td>
+                            <td>{{ $data-> email_konsumen  }}</td>
                             <td>
                             <form action="{{ url('/test',$data->id) }}" method="post">
                                 @csrf
